@@ -237,7 +237,7 @@ header h1 {
 
 .modal-header {
     background: var(--bg-secondary);
-    padding: calc(env(safe-area-inset-top, 0px) + 60px) 15px 20px 15px;
+    padding: calc(env(safe-area-inset-top, 0px) + 70px) 15px 20px 15px;
     border-bottom: 2px solid var(--border);
     display: flex;
     align-items: center;
@@ -291,24 +291,19 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg-tertiary);
-    border: 2px solid var(--border);
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
+    background: transparent;
+    border: none;
+    width: auto;
+    height: auto;
     flex-shrink: 0;
 }
 
 .close:active, .close-detail:active {
-    background: var(--bg-hover);
-    border-color: var(--accent);
     color: var(--accent);
     transform: scale(0.9);
 }
 
 .close:hover, .close-detail:hover {
-    background: var(--bg-hover);
-    border-color: var(--accent);
     color: var(--accent);
 }
 
@@ -636,7 +631,7 @@ header h1 {
     }
     
     .modal-header {
-        padding: calc(env(safe-area-inset-top, 0px) + 70px) 25px 25px 25px;
+        padding: calc(env(safe-area-inset-top, 0px) + 80px) 25px 25px 25px;
     }
     
     .modal-body {
@@ -732,7 +727,7 @@ header h1 {
     }
     
     .modal-header {
-        padding: calc(env(safe-area-inset-top, 0px) + 80px) 30px 30px 30px;
+        padding: calc(env(safe-area-inset-top, 0px) + 90px) 30px 30px 30px;
     }
     
     .modal-body {
