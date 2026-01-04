@@ -35,8 +35,11 @@
     <!-- Modal para seleccionar recetas -->
     <div id="recipeModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modalDate"></h2>
+            <div class="modal-header">
+                <h2 id="modalDate"></h2>
+                <button class="close" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="modal-body">
             <div class="meal-selection">
                 <div class="meal-section">
                     <h3>🍴 Comida</h3>
@@ -47,14 +50,19 @@
                     <div id="dinnerRecipes" class="recipes-list"></div>
                 </div>
             </div>
+            </div>
         </div>
     </div>
 
     <!-- Modal para ver detalles de receta -->
     <div id="recipeDetailModal" class="modal">
         <div class="modal-content recipe-detail">
-            <span class="close-detail">&times;</span>
+            <div class="modal-header">
+                <button class="close-detail" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="modal-body">
             <div id="recipeDetailContent"></div>
+            </div>
         </div>
     </div>
 
