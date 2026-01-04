@@ -284,11 +284,11 @@ function setupEventListeners() {
     });
     
     // Cerrar modales
-    document.querySelector('.back-btn:not(.back-detail)').addEventListener('click', () => {
+    document.querySelector('.close').addEventListener('click', () => {
         document.getElementById('recipeModal').style.display = 'none';
     });
     
-    document.querySelector('.back-detail').addEventListener('click', () => {
+    document.querySelector('.close-detail').addEventListener('click', () => {
         document.getElementById('recipeDetailModal').style.display = 'none';
     });
     

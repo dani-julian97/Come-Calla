@@ -258,51 +258,44 @@ header h1 {
     }
 }
 
-.back-btn {
-    background: var(--bg-tertiary);
-    border: 2px solid var(--border);
+.close, .close-detail {
     color: var(--text-primary);
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 2.5rem;
+    font-weight: bold;
     cursor: pointer;
     transition: all 0.2s ease;
-    padding: 10px 15px;
-    border-radius: 10px;
+    line-height: 1;
+    padding: 8px;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     user-select: none;
+    min-width: 44px;
     min-height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
     position: absolute;
     top: max(15px, env(safe-area-inset-top, 15px));
-    left: 15px;
+    right: 15px;
     z-index: 10;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    background: var(--bg-tertiary);
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
 }
 
-.back-btn:active {
+.close:active, .close-detail:active {
     background: var(--bg-hover);
     border-color: var(--accent);
-    transform: scale(0.95);
+    color: var(--accent);
+    transform: scale(0.9);
 }
 
-.back-btn:hover {
+.close:hover, .close-detail:hover {
     background: var(--bg-hover);
     border-color: var(--accent);
-    box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
-}
-
-.back-icon {
-    font-size: 1.3rem;
-    font-weight: bold;
-    line-height: 1;
-}
-
-.back-text {
-    font-size: 0.95rem;
+    color: var(--accent);
 }
 
 #modalDate {
@@ -310,8 +303,7 @@ header h1 {
     margin-top: 0;
     font-size: 1.3rem;
     color: var(--accent);
-    padding-left: 120px;
-    padding-right: 15px;
+    padding-right: 60px;
 }
 
 .meal-selection {
@@ -633,15 +625,14 @@ header h1 {
         animation: slideDown 0.3s ease;
     }
     
-    .back-btn {
+    .close, .close-detail {
         top: max(20px, env(safe-area-inset-top, 20px));
-        left: 20px;
-        padding: 12px 18px;
+        right: 20px;
     }
     
     #modalDate {
         font-size: 1.5rem;
-        padding-left: 140px;
+        padding-right: 60px;
     }
     
     .meal-selection {
@@ -735,16 +726,15 @@ header h1 {
         padding-bottom: 30px;
     }
     
-    .back-btn {
+    .close, .close-detail {
         top: max(25px, env(safe-area-inset-top, 25px));
-        left: 25px;
-        padding: 12px 20px;
+        right: 25px;
     }
     
     #modalDate {
         font-size: 1.8rem;
         margin-bottom: 30px;
-        padding-left: 150px;
+        padding-right: 60px;
     }
     
     .meal-selection {
