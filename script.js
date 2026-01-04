@@ -156,7 +156,31 @@ function openRecipeModal(dateKey) {
     renderRecipeSelection('lunch', 'lunchRecipes');
     renderRecipeSelection('dinner', 'dinnerRecipes');
     
+    // Colapsar secciones por defecto
+    const mealSections = document.querySelectorAll('.meal-section');
+    mealSections.forEach(section => {
+        section.classList.add('collapsed');
+    });
+    
+    // Agregar event listeners para toggle
+    setupMealSectionToggles();
+    
     modal.style.display = 'block';
+}
+
+// Configurar toggles para las secciones de comida/cena
+function setupMealSectionToggles() {
+    const mealSections = document.querySelectorAll('.meal-section');
+    mealSections.forEach(section => {
+        const h3 = section.querySelector('h3');
+        if (h3 && !h3.dataset.toggleSetup) {
+            h3.dataset.toggleSetup = 'true';
+            h3.addEventListener('click', (e) => {
+                e.stopPropagation();
+                section.classList.toggle('collapsed');
+            });
+        }
+    });
 }
 
 // Renderizar lista de recetas para selección
