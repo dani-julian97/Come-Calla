@@ -1,0 +1,14 @@
+{
+  "id": "tortilla-patatas",
+  "titulo": "Tortilla de Patatas",
+  "foto": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400",
+  "ingredientes": [
+    "6 huevos",
+    "4 patatas grandes",
+    "1 cebolla",
+    "Aceite de oliva",
+    "Sal"
+  ],
+  "preparacion": "Pela y corta las patatas en rodajas finas. Corta la cebolla en juliana. Fríe las patatas y cebolla en abundante aceite a fuego medio hasta que estén tiernas. Escúrrelas bien. Bate los huevos con sal, añade las patatas y cebolla. En una sartén antiadherente con poco aceite, vierte la mezcla. Cuaja por un lado, dale la vuelta y cuaja por el otro. Sirve caliente o templada."
+}
+

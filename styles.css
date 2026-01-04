@@ -503,6 +503,17 @@ header h1 {
     padding: 0;
 }
 
+.eye-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.recipe-detail-btn:hover .eye-icon,
+.recipe-detail-btn:active .eye-icon {
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(200deg);
+}
+
 .recipe-detail-btn:active {
     background: var(--accent);
     border-color: var(--accent);

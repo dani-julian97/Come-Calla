@@ -1,0 +1,22 @@
+{
+  "id": "paella-marisco",
+  "titulo": "Paella de Marisco",
+  "foto": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400",
+  "ingredientes": [
+    "400g de arroz",
+    "300g de gambas",
+    "200g de mejillones",
+    "1 calamar",
+    "1 pimiento rojo",
+    "1 tomate",
+    "1 cebolla",
+    "3 dientes de ajo",
+    "Azafrán",
+    "Caldo de pescado",
+    "Aceite de oliva",
+    "Guisantes",
+    "Sal"
+  ],
+  "preparacion": "Sofríe el pimiento, tomate y cebolla picados. Añade el calamar cortado y las gambas. Agrega el arroz y rehoga. Vierte el caldo caliente con azafrán. Cocina 18 minutos. Añade los mejillones y guisantes. Deja reposar 5 minutos cubierto. Sirve caliente con limón."
+}
+

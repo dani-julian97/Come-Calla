@@ -1,0 +1,21 @@
+{
+  "id": "ensalada-mediterranea",
+  "titulo": "Ensalada Mediterránea",
+  "foto": "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400",
+  "ingredientes": [
+    "Lechuga",
+    "2 tomates",
+    "1 pepino",
+    "1 pimiento verde",
+    "Aceitunas negras",
+    "100g de queso feta",
+    "Cebolla morada",
+    "Alcaparras",
+    "Aceite de oliva",
+    "Vinagre",
+    "Orégano",
+    "Sal"
+  ],
+  "preparacion": "Lava y corta todas las verduras. Corta el tomate y pepino en rodajas. El pimiento en tiras. Corta la cebolla en rodajas finas. Mezcla todo en un bol. Añade aceitunas y alcaparras. Desmenuza el queso feta. Prepara una vinagreta con aceite, vinagre, orégano y sal. Aliña y sirve fresca."
+}
+

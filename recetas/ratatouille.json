@@ -1,0 +1,19 @@
+{
+  "id": "ratatouille",
+  "titulo": "Ratatouille",
+  "foto": "https://images.unsplash.com/photo-1572441713132-51c75654db73?w=400",
+  "ingredientes": [
+    "2 berenjenas",
+    "2 calabacines",
+    "2 pimientos rojos",
+    "4 tomates",
+    "1 cebolla",
+    "3 dientes de ajo",
+    "Albahaca fresca",
+    "Aceite de oliva",
+    "Sal y pimienta",
+    "Tomillo"
+  ],
+  "preparacion": "Corta todas las verduras en rodajas de 1cm. Sofríe por separado cada verdura hasta que esté tierna. En una cazuela grande, rehoga la cebolla y ajo. Añade los tomates pelados y troceados. Agrega todas las verduras, hierbas, sal y pimienta. Cocina a fuego lento 30 minutos hasta que esté meloso. Sirve templado o frío con albahaca fresca."
+}
+

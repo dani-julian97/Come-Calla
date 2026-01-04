@@ -1,0 +1,20 @@
+{
+  "id": "pasta-bolonesa",
+  "titulo": "Pasta Boloñesa",
+  "foto": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400",
+  "ingredientes": [
+    "400g de pasta",
+    "300g de carne picada",
+    "1 cebolla",
+    "2 zanahorias",
+    "2 tallos de apio",
+    "3 dientes de ajo",
+    "400g de tomate triturado",
+    "Vino tinto",
+    "Aceite de oliva",
+    "Sal y pimienta",
+    "Queso parmesano"
+  ],
+  "preparacion": "Pica finamente la cebolla, zanahorias y apio. En una olla, sofríe la cebolla con aceite hasta que esté transparente. Añade la zanahoria y el apio, cocina 5 minutos. Agrega el ajo picado y la carne picada, dora bien. Vierte el vino y deja evaporar. Añade el tomate, sal y pimienta. Cocina a fuego lento 1-2 horas. Cuece la pasta y sírvela con la salsa. Espolvorea parmesano."
+}
+

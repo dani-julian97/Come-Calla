@@ -1,0 +1,20 @@
+{
+  "id": "pasta-primavera",
+  "titulo": "Pasta Primavera",
+  "foto": "https://images.unsplash.com/photo-1551462147-85835e4d2fdc?w=400",
+  "ingredientes": [
+    "400g de pasta",
+    "1 calabacín",
+    "1 pimiento rojo",
+    "200g de brócoli",
+    "150g de guisantes",
+    "200g de champiñones",
+    "2 dientes de ajo",
+    "Nata para cocinar",
+    "Queso parmesano",
+    "Aceite de oliva",
+    "Sal y pimienta"
+  ],
+  "preparacion": "Cuece la pasta al dente. Corta las verduras en trozos. Sofríe el ajo, añade champiñones y cocina 5 minutos. Añade el resto de verduras y cocina 8 minutos. Vierte la nata y cocina 2 minutos más. Añade la pasta escurrida y mezcla. Espolvorea parmesano y sirve caliente."
+}
+

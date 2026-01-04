@@ -18,7 +18,28 @@ async function loadRecipes() {
         'recetas/pollo-teriyaki.json',
         'recetas/salmon-horno.json',
         'recetas/ensalada-cesar.json',
-        'recetas/risotto-setas.json'
+        'recetas/risotto-setas.json',
+        'recetas/pasta-bolonesa.json',
+        'recetas/judias-verdes-ajo.json',
+        'recetas/sopa-castellana.json',
+        'recetas/tortilla-patatas.json',
+        'recetas/ensalada-uvas-aguacate.json',
+        'recetas/entrana-acompanamiento.json',
+        'recetas/filete-ruso-tomate.json',
+        'recetas/pollo-mediterraneo.json',
+        'recetas/paella-marisco.json',
+        'recetas/ratatouille.json',
+        'recetas/gazpacho.json',
+        'recetas/lubina-verduras.json',
+        'recetas/pisto-manchego.json',
+        'recetas/risotto-setas-espinacas.json',
+        'recetas/ensalada-mediterranea.json',
+        'recetas/salmon-verduras-horno.json',
+        'recetas/pasta-primavera.json',
+        'recetas/calabacin-relleno.json',
+        'recetas/berenjenas-rellenas.json',
+        'recetas/ensalada-fruta-fresca.json',
+        'recetas/pollo-setas.json'
     ];
 
     try {
@@ -201,7 +222,9 @@ function renderRecipeSelection(mealType, containerId) {
                 <div class="recipe-card-title">${recipe.titulo}</div>
                 <div class="recipe-card-ingredients">${recipe.ingredientes.slice(0, 3).join(', ')}...</div>
             </div>
-            <button class="recipe-detail-btn" aria-label="Ver detalles">👁️</button>
+            <button class="recipe-detail-btn" aria-label="Ver detalles">
+                <img src="assets/icono-ojo.svg" alt="Ver detalles" class="eye-icon">
+            </button>
         `;
         
         const detailBtn = card.querySelector('.recipe-detail-btn');

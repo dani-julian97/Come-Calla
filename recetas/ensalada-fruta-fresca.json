@@ -1,0 +1,19 @@
+{
+  "id": "ensalada-fruta-fresca",
+  "titulo": "Ensalada con Fruta Fresca",
+  "foto": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400",
+  "ingredientes": [
+    "Lechuga variada",
+    "1 manzana",
+    "1 pera",
+    "100g de fresas",
+    "50g de nueces",
+    "Queso de cabra",
+    "Aceite de oliva",
+    "Vinagre de manzana",
+    "Miel",
+    "Sal"
+  ],
+  "preparacion": "Lava y corta la lechuga. Corta la manzana y pera en trozos. Corta las fresas por la mitad. Prepara una vinagreta con aceite, vinagre, miel y sal. Mezcla las hojas con la fruta y nueces. Desmenuza el queso por encima. Aliña y sirve inmediatamente para que la fruta no se oxide."
+}
+
