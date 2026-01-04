@@ -102,15 +102,25 @@ function createDayCell(day, isOtherMonth, dateKey, isToday = false) {
     // Mostrar recetas asignadas
     if (mealPlan[dateKey]) {
         if (mealPlan[dateKey].lunch) {
-            const lunchPreview = document.createElement('div');
+            const lunchPreview = document.createElement('img');
             lunchPreview.className = 'meal-preview lunch';
-            lunchPreview.textContent = `🍴 ${mealPlan[dateKey].lunch.titulo}`;
+            lunchPreview.src = mealPlan[dateKey].lunch.foto;
+            lunchPreview.alt = mealPlan[dateKey].lunch.titulo;
+            lunchPreview.title = `🍴 ${mealPlan[dateKey].lunch.titulo}`;
+            lunchPreview.onerror = function() {
+                this.style.display = 'none';
+            };
             cell.appendChild(lunchPreview);
         }
         if (mealPlan[dateKey].dinner) {
-            const dinnerPreview = document.createElement('div');
+            const dinnerPreview = document.createElement('img');
             dinnerPreview.className = 'meal-preview dinner';
-            dinnerPreview.textContent = `🌙 ${mealPlan[dateKey].dinner.titulo}`;
+            dinnerPreview.src = mealPlan[dateKey].dinner.foto;
+            dinnerPreview.alt = mealPlan[dateKey].dinner.titulo;
+            dinnerPreview.title = `🌙 ${mealPlan[dateKey].dinner.titulo}`;
+            dinnerPreview.onerror = function() {
+                this.style.display = 'none';
+            };
             cell.appendChild(dinnerPreview);
         }
     }
