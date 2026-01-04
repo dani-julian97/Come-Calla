@@ -237,7 +237,7 @@ header h1 {
 
 .modal-header {
     background: var(--bg-secondary);
-    padding: calc(env(safe-area-inset-top, 0px) + 15px) 15px 15px 15px;
+    padding: calc(env(safe-area-inset-top, 0px) + 60px) 15px 20px 15px;
     border-bottom: 2px solid var(--border);
     display: flex;
     align-items: center;
@@ -636,7 +636,7 @@ header h1 {
     }
     
     .modal-header {
-        padding: calc(env(safe-area-inset-top, 0px) + 20px) 25px 20px 25px;
+        padding: calc(env(safe-area-inset-top, 0px) + 70px) 25px 25px 25px;
     }
     
     .modal-body {
@@ -732,7 +732,7 @@ header h1 {
     }
     
     .modal-header {
-        padding: calc(env(safe-area-inset-top, 0px) + 25px) 30px 25px 30px;
+        padding: calc(env(safe-area-inset-top, 0px) + 80px) 30px 30px 30px;
     }
     
     .modal-body {
