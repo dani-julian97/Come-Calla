@@ -3,12 +3,14 @@ let currentDate = new Date();
 let selectedDate = null;
 let recipes = [];
 let mealPlan = JSON.parse(localStorage.getItem('mealPlan')) || {};
+let shoppingListChecked = JSON.parse(localStorage.getItem('shoppingListChecked')) || {};
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     loadRecipes();
     renderCalendar();
     setupEventListeners();
+    showView('calendar');
 });
 
 // Cargar recetas desde archivos JSON
@@ -293,6 +295,150 @@ function saveMealPlan() {
     localStorage.setItem('mealPlan', JSON.stringify(mealPlan));
 }
 
+// Guardar estado de checkboxes de lista de compra
+function saveShoppingListChecked() {
+    localStorage.setItem('shoppingListChecked', JSON.stringify(shoppingListChecked));
+}
+
+// Mostrar/ocultar vistas
+function showView(viewName) {
+    const calendarView = document.querySelector('.container');
+    const shoppingListView = document.getElementById('shoppingListView');
+    
+    if (viewName === 'calendar') {
+        calendarView.classList.remove('hidden');
+        shoppingListView.classList.add('hidden');
+    } else if (viewName === 'shoppingList') {
+        calendarView.classList.add('hidden');
+        shoppingListView.classList.remove('hidden');
+        generateShoppingList();
+    }
+}
+
+// Generar lista de compra semanal
+function generateShoppingList() {
+    const content = document.getElementById('shoppingListContent');
+    content.innerHTML = '';
+    
+    // Obtener inicio y fin de la semana actual (lunes a domingo)
+    const today = new Date();
+    const dayOfWeek = (today.getDay() + 6) % 7; // Lunes = 0
+    const monday = new Date(today);
+    monday.setDate(today.getDate() - dayOfWeek);
+    monday.setHours(0, 0, 0, 0);
+    
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+    sunday.setHours(23, 59, 59, 999);
+    
+    // Recopilar todos los ingredientes de la semana
+    const ingredientsMap = new Map();
+    
+    for (let date = new Date(monday); date <= sunday; date.setDate(date.getDate() + 1)) {
+        const dateKey = formatDateKey(date);
+        if (mealPlan[dateKey]) {
+            if (mealPlan[dateKey].lunch) {
+                addIngredientsToMap(mealPlan[dateKey].lunch.ingredientes, ingredientsMap);
+            }
+            if (mealPlan[dateKey].dinner) {
+                addIngredientsToMap(mealPlan[dateKey].dinner.ingredientes, ingredientsMap);
+            }
+        }
+    }
+    
+    if (ingredientsMap.size === 0) {
+        content.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 40px;">No hay recetas seleccionadas para esta semana. Selecciona recetas en el calendario para generar la lista de compra.</p>';
+        return;
+    }
+    
+    // Agrupar ingredientes por categoría
+    const categories = {
+        'Verduras y Hortalizas': [],
+        'Carnes y Pescados': [],
+        'Lácteos y Huevos': [],
+        'Cereales y Pasta': [],
+        'Condimentos y Especias': [],
+        'Otros': []
+    };
+    
+    const vegKeywords = ['cebolla', 'ajo', 'tomate', 'pimiento', 'calabacín', 'berenjena', 'espinaca', 'lechuga', 'judía', 'pepino', 'zanahoria', 'apio', 'brócoli', 'guisante'];
+    const meatKeywords = ['pollo', 'carne', 'entraña', 'filete', 'panceta', 'bacon', 'jamón', 'gamba', 'mejillón', 'salmón', 'lubina', 'calamar', 'pescado'];
+    const dairyKeywords = ['huevo', 'queso', 'nata', 'parmesano', 'mozzarella', 'feta', 'cabra'];
+    const grainKeywords = ['arroz', 'pasta', 'pan', 'espagueti', 'risotto'];
+    const spiceKeywords = ['sal', 'pimienta', 'aceite', 'vinagre', 'pimentón', 'orégano', 'romero', 'tomillo', 'albahaca', 'azafrán', 'limón'];
+    
+    ingredientsMap.forEach((quantity, ingredient) => {
+        const ingLower = ingredient.toLowerCase();
+        let categorized = false;
+        
+        if (vegKeywords.some(kw => ingLower.includes(kw))) {
+            categories['Verduras y Hortalizas'].push({ingredient, quantity});
+            categorized = true;
+        } else if (meatKeywords.some(kw => ingLower.includes(kw))) {
+            categories['Carnes y Pescados'].push({ingredient, quantity});
+            categorized = true;
+        } else if (dairyKeywords.some(kw => ingLower.includes(kw))) {
+            categories['Lácteos y Huevos'].push({ingredient, quantity});
+            categorized = true;
+        } else if (grainKeywords.some(kw => ingLower.includes(kw))) {
+            categories['Cereales y Pasta'].push({ingredient, quantity});
+            categorized = true;
+        } else if (spiceKeywords.some(kw => ingLower.includes(kw))) {
+            categories['Condimentos y Especias'].push({ingredient, quantity});
+            categorized = true;
+        }
+        
+        if (!categorized) {
+            categories['Otros'].push({ingredient, quantity});
+        }
+    });
+    
+    // Renderizar por categorías
+    Object.keys(categories).forEach(category => {
+        if (categories[category].length > 0) {
+            const section = document.createElement('div');
+            section.className = 'shopping-list-section';
+            section.innerHTML = `<h3>${category}</h3>`;
+            
+            const list = document.createElement('div');
+            categories[category].forEach(({ingredient, quantity}) => {
+                const itemKey = ingredient.toLowerCase().trim();
+                const isChecked = shoppingListChecked[itemKey] || false;
+                
+                const item = document.createElement('label');
+                item.className = `shopping-list-item ${isChecked ? 'checked' : ''}`;
+                item.innerHTML = `
+                    <input type="checkbox" class="shopping-list-checkbox" ${isChecked ? 'checked' : ''} data-ingredient="${itemKey}">
+                    <span class="shopping-list-item-label">${ingredient}</span>
+                    ${quantity > 1 ? `<span class="shopping-list-quantity">x${quantity}</span>` : ''}
+                `;
+                
+                const checkbox = item.querySelector('.shopping-list-checkbox');
+                checkbox.addEventListener('change', (e) => {
+                    const checked = e.target.checked;
+                    shoppingListChecked[itemKey] = checked;
+                    saveShoppingListChecked();
+                    item.classList.toggle('checked', checked);
+                });
+                
+                list.appendChild(item);
+            });
+            
+            section.appendChild(list);
+            content.appendChild(section);
+        }
+    });
+}
+
+// Agregar ingredientes al mapa contando cantidad
+function addIngredientsToMap(ingredients, map) {
+    ingredients.forEach(ingredient => {
+        const ing = ingredient.trim();
+        const existing = map.get(ing) || 0;
+        map.set(ing, existing + 1);
+    });
+}
+
 // Configurar event listeners
 function setupEventListeners() {
     // Navegación de meses
@@ -304,6 +450,16 @@ function setupEventListeners() {
     document.getElementById('nextMonth').addEventListener('click', () => {
         currentDate.setMonth(currentDate.getMonth() + 1);
         renderCalendar();
+    });
+    
+    // Botón lista de compra
+    document.getElementById('shoppingListBtn').addEventListener('click', () => {
+        showView('shoppingList');
+    });
+    
+    // Botón volver al calendario
+    document.getElementById('backToCalendarBtn').addEventListener('click', () => {
+        showView('calendar');
     });
     
     // Cerrar modales
@@ -327,4 +483,3 @@ function setupEventListeners() {
         }
     });
 }
-
