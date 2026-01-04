@@ -1,0 +1,17 @@
+{
+  "id": "pollo-teriyaki",
+  "titulo": "Pollo Teriyaki",
+  "foto": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&h=600&fit=crop",
+  "ingredientes": [
+    "4 pechugas de pollo",
+    "4 cucharadas de salsa de soja",
+    "2 cucharadas de miel",
+    "2 cucharadas de jengibre rallado",
+    "2 dientes de ajo picados",
+    "2 cucharadas de aceite de sésamo",
+    "Arroz blanco para acompañar",
+    "Cebollino para decorar"
+  ],
+  "preparacion": "1. Cortar el pollo en tiras o cubos.\n2. En un bol, mezclar la salsa de soja, miel, jengibre, ajo y aceite de sésamo.\n3. Marinar el pollo en esta mezcla durante al menos 30 minutos.\n4. Calentar una sartén grande a fuego medio-alto.\n5. Cocinar el pollo durante 5-7 minutos por cada lado hasta que esté dorado y cocido.\n6. Añadir el resto de la marinada y dejar reducir hasta formar una salsa espesa.\n7. Servir sobre arroz blanco y decorar con cebollino."
+}
+

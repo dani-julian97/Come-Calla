@@ -1,0 +1,17 @@
+{
+  "id": "salmon-horno",
+  "titulo": "Salmón al Horno con Verduras",
+  "foto": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&h=600&fit=crop",
+  "ingredientes": [
+    "4 filetes de salmón",
+    "2 calabacines",
+    "2 pimientos rojos",
+    "1 cebolla morada",
+    "Aceite de oliva",
+    "Limón",
+    "Eneldo fresco",
+    "Sal y pimienta"
+  ],
+  "preparacion": "1. Precalentar el horno a 200°C.\n2. Cortar las verduras en rodajas y colocarlas en una bandeja de horno.\n3. Aliñar las verduras con aceite de oliva, sal y pimienta.\n4. Colocar los filetes de salmón sobre las verduras.\n5. Rociar con aceite de oliva, zumo de limón y espolvorear con eneldo.\n6. Hornear durante 15-20 minutos hasta que el salmón esté cocido.\n7. Servir caliente con más limón y eneldo fresco."
+}
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0f0f0f">
+    <title>Planificador de Comidas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍽️ Planificador de Comidas</h1>
+            <div class="month-navigation">
+                <button id="prevMonth" class="nav-btn">‹</button>
+                <h2 id="currentMonth"></h2>
+                <button id="nextMonth" class="nav-btn">›</button>
+            </div>
+        </header>
+
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <div class="day-header">Lun</div>
+                <div class="day-header">Mar</div>
+                <div class="day-header">Mié</div>
+                <div class="day-header">Jue</div>
+                <div class="day-header">Vie</div>
+                <div class="day-header">Sáb</div>
+                <div class="day-header">Dom</div>
+            </div>
+            <div id="calendar" class="calendar-grid"></div>
+        </div>
+    </div>
+
+    <!-- Modal para seleccionar recetas -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalDate"></h2>
+            <div class="meal-selection">
+                <div class="meal-section">
+                    <h3>🍴 Comida</h3>
+                    <div id="lunchRecipes" class="recipes-list"></div>
+                </div>
+                <div class="meal-section">
+                    <h3>🌙 Cena</h3>
+                    <div id="dinnerRecipes" class="recipes-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver detalles de receta -->
+    <div id="recipeDetailModal" class="modal">
+        <div class="modal-content recipe-detail">
+            <span class="close-detail">&times;</span>
+            <div id="recipeDetailContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

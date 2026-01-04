@@ -1,0 +1,20 @@
+{
+  "id": "ensalada-cesar",
+  "titulo": "Ensalada César",
+  "foto": "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=800&h=600&fit=crop",
+  "ingredientes": [
+    "1 lechuga romana",
+    "200g de pollo a la parrilla",
+    "100g de queso parmesano",
+    "50g de pan tostado en cubos",
+    "4 anchoas",
+    "2 yemas de huevo",
+    "2 dientes de ajo",
+    "Aceite de oliva",
+    "Zumo de limón",
+    "Mostaza Dijon",
+    "Sal y pimienta"
+  ],
+  "preparacion": "1. Lavar y cortar la lechuga en trozos medianos.\n2. Preparar la salsa César: triturar las anchoas con ajo, añadir las yemas, mostaza, zumo de limón y aceite de oliva mientras se bate.\n3. Cortar el pollo en tiras.\n4. Tostar el pan cortado en cubos en el horno hasta que esté crujiente.\n5. En un bol grande, mezclar la lechuga con la salsa.\n6. Añadir el pollo, los crutones y el queso parmesano rallado.\n7. Mezclar suavemente y servir inmediatamente."
+}
+

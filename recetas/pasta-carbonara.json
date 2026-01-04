@@ -1,0 +1,15 @@
+{
+  "id": "pasta-carbonara",
+  "titulo": "Pasta Carbonara",
+  "foto": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&h=600&fit=crop",
+  "ingredientes": [
+    "400g de espaguetis",
+    "200g de panceta o bacon",
+    "4 yemas de huevo",
+    "100g de queso parmesano rallado",
+    "Pimienta negra molida",
+    "Sal"
+  ],
+  "preparacion": "1. Cocer la pasta en agua con sal según las instrucciones del paquete.\n2. Mientras tanto, cortar la panceta en trozos pequeños y freírla hasta que esté crujiente.\n3. En un bol, batir las yemas de huevo con el queso parmesano y pimienta negra.\n4. Escurrir la pasta (reservando un poco de agua de cocción) y añadirla a la sartén con la panceta.\n5. Retirar del fuego y añadir la mezcla de huevo y queso, removiendo rápidamente.\n6. Si es necesario, añadir un poco de agua de cocción para crear una salsa cremosa.\n7. Servir inmediatamente con más parmesano y pimienta."
+}
+
