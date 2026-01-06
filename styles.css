@@ -583,6 +583,7 @@ header h1 {
     padding: 20px 0;
     transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
     min-height: 0;
+    align-items: stretch;
 }
 
 /* Para las secciones de comida y cena, permitir scroll si es necesario */
@@ -592,6 +593,7 @@ header h1 {
     overflow-x: hidden;
     padding-right: 10px;
     margin-right: -5px;
+    padding-bottom: 20px;
 }
 
 #dinnerRecipes {
@@ -600,6 +602,7 @@ header h1 {
     overflow-x: hidden;
     padding-right: 10px;
     margin-right: -5px;
+    padding-bottom: 20px;
 }
 
 /* Scrollbar personalizado para las listas de recetas */
@@ -655,6 +658,8 @@ header h1 {
     position: relative;
     z-index: 1;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+    min-height: fit-content;
 }
 
 .category-header {
@@ -702,8 +707,9 @@ header h1 {
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    padding: 30px 25px;
+    padding: 30px 25px 50px 25px;
     transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+    box-sizing: border-box;
 }
 
 .category-section.collapsed .category-recipes-list {
@@ -980,10 +986,12 @@ header h1 {
     
     #lunchRecipes {
         max-height: 80vh;
+        padding-bottom: 25px;
     }
     
     #dinnerRecipes {
         max-height: 80vh;
+        padding-bottom: 25px;
     }
     
     .meal-section h3 {
@@ -1003,7 +1011,7 @@ header h1 {
     
     .category-recipes-list {
         max-height: 750px;
-        padding: 35px 30px;
+        padding: 35px 30px 60px 30px;
         gap: 22px;
     }
     
@@ -1026,7 +1034,7 @@ header h1 {
     
     .category-recipes-list {
         max-height: 700px;
-        padding: 30px 25px;
+        padding: 30px 25px 55px 25px;
         gap: 20px;
     }
     
@@ -1138,10 +1146,12 @@ header h1 {
     
     #lunchRecipes {
         max-height: 85vh;
+        padding-bottom: 30px;
     }
     
     #dinnerRecipes {
         max-height: 85vh;
+        padding-bottom: 30px;
     }
     
     .meal-section h3 {
@@ -1161,7 +1171,7 @@ header h1 {
     
     .category-recipes-list {
         max-height: 850px;
-        padding: 40px 35px;
+        padding: 40px 35px 70px 35px;
         gap: 25px;
     }
     
@@ -1182,7 +1192,7 @@ header h1 {
     
     .category-recipes-list {
         max-height: 800px;
-        padding: 35px 30px;
+        padding: 35px 30px 65px 30px;
         gap: 22px;
     }
     
