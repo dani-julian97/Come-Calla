@@ -1,6 +1,7 @@
 {
   "id": "judias-verdes-ajo",
   "titulo": "Judías Verdes con Ajo",
+  "categoria": "ensalada/verdura",
   "foto": "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=400",
   "ingredientes": [
     "500g de judías verdes",
@@ -13,4 +14,5 @@
   ],
   "preparacion": "Lava y corta las puntas de las judías. Cuécelas en agua con sal durante 8-10 minutos hasta que estén tiernas pero al dente. Escúrrelas y resérvalas. En una sartén con aceite, sofríe el ajo laminado y las cebollas tiernas. Añade las judías, saltea y espolvorea pimentón. Si usas jamón, añádelo cortado en tiras. Cocina 2-3 minutos más y sirve caliente."
 }
+
 

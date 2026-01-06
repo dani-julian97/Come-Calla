@@ -1,6 +1,7 @@
 {
   "id": "calabacin-relleno",
   "titulo": "Calabacín Relleno",
+  "categoria": "ensalada/verdura",
   "foto": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400",
   "ingredientes": [
     "4 calabacines medianos",
@@ -16,4 +17,5 @@
   ],
   "preparacion": "Corta los calabacines por la mitad a lo largo y vacía el centro. Sofríe la cebolla, ajo y carne. Añade los tomates picados. Rellena los calabacines con la mezcla. Cubre con queso y pan rallado. Hornea a 180°C durante 30 minutos hasta que estén tiernos y gratinados. Sirve caliente."
 }
+
 

@@ -1,6 +1,7 @@
 {
   "id": "ensalada-uvas-aguacate",
   "titulo": "Ensalada con Uvas, Aguacate y Espinacas",
+  "categoria": "ensalada/verdura",
   "foto": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400",
   "ingredientes": [
     "200g de espinacas frescas",
@@ -16,4 +17,5 @@
   ],
   "preparacion": "Lava y seca las espinacas. Corta el aguacate en cubos y las uvas por la mitad. Corta la cebolla en rodajas finas. Prepara una vinagreta mezclando aceite, vinagre balsámico, miel, sal y pimienta. En un bol, mezcla las espinacas, aguacate, uvas, nueces y cebolla. Desmenuza el queso feta por encima. Aliña con la vinagreta y sirve inmediatamente."
 }
+
 

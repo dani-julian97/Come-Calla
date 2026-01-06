@@ -1,6 +1,7 @@
 {
   "id": "filete-ruso-tomate",
   "titulo": "Filete Ruso con Tomate",
+  "categoria": "proteina",
   "foto": "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=400",
   "ingredientes": [
     "500g de carne picada",
@@ -16,4 +17,5 @@
   ],
   "preparacion": "Pica finamente la cebolla y el ajo. Mezcla la carne con la cebolla, ajo, huevo, pan rallado, orégano, sal y pimienta. Forma hamburguesas ovaladas. Cocínalas a la plancha o en sartén hasta que estén doradas por ambos lados. Mientras tanto, corta los tomates en rodajas y sofríelos ligeramente. Sirve los filetes con los tomates y espolvorea perejil picado."
 }
+
 

@@ -1,6 +1,7 @@
 {
   "id": "sopa-castellana",
   "titulo": "Sopa Castellana",
+  "categoria": "hidratos",
   "foto": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400",
   "ingredientes": [
     "200g de pan duro",
@@ -16,4 +17,5 @@
   ],
   "preparacion": "Corta el pan en rebanadas y tuéstalo ligeramente. En una cazuela, sofríe el ajo, cebolla y pimientos picados. Añade el pimentón, mezcla rápido y vierte el caldo caliente. Echa el pan y cocina 10 minutos. Casca los huevos directamente en la sopa y cocina hasta que cuajen. Espolvorea perejil picado y sirve inmediatamente."
 }
+
 

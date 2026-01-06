@@ -1,6 +1,7 @@
 {
   "id": "pollo-setas",
   "titulo": "Pollo con Setas",
+  "categoria": "proteina",
   "foto": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400",
   "ingredientes": [
     "4 pechugas de pollo",
@@ -15,4 +16,5 @@
   ],
   "preparacion": "Corta el pollo en tiras y saltea hasta dorar. Resérvalo. En la misma sartén, sofríe la cebolla y ajo. Añade las setas y cocina 5 minutos. Vierte el vino y deja reducir. Añade la nata y el pollo. Cocina 5 minutos más. Espolvorea perejil y sirve con arroz o patatas."
 }
+
 

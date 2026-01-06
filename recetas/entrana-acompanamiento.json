@@ -1,6 +1,7 @@
 {
   "id": "entrana-acompanamiento",
   "titulo": "Filete de Entraña con Acompañamiento",
+  "categoria": "proteina",
   "foto": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400",
   "ingredientes": [
     "4 filetes de entraña",
@@ -14,4 +15,5 @@
   ],
   "preparacion": "Corta las patatas en cuñas y los pimientos en tiras. Corta el calabacín en rodajas. Mezcla las verduras con aceite, ajo picado, romero, sal y pimienta. Hornea a 200°C durante 25 minutos. Salpimenta los filetes y cocínalos a la plancha 3-4 minutos por cada lado para término medio. Sirve los filetes con las verduras asadas calientes."
 }
+
 

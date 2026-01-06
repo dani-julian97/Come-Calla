@@ -1,6 +1,7 @@
 {
   "id": "berenjenas-rellenas",
   "titulo": "Berenjenas Rellenas",
+  "categoria": "ensalada/verdura",
   "foto": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400",
   "ingredientes": [
     "4 berenjenas medianas",
@@ -15,4 +16,5 @@
   ],
   "preparacion": "Corta las berenjenas por la mitad y hazles cortes. Salpiméntalas y hornea 20 minutos a 200°C. Vacía la pulpa. Sofríe cebolla, ajo y carne. Añade tomates y la pulpa de berenjena. Rellena las berenjenas. Cubre con queso y albahaca. Gratina 10 minutos más. Sirve caliente."
 }
+
 

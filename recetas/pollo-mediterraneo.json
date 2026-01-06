@@ -1,6 +1,7 @@
 {
   "id": "pollo-mediterraneo",
   "titulo": "Pollo al Horno Mediterráneo",
+  "categoria": "proteina",
   "foto": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400",
   "ingredientes": [
     "4 muslos de pollo",
@@ -16,4 +17,5 @@
   ],
   "preparacion": "Precalienta el horno a 200°C. Corta las verduras en trozos grandes. Coloca el pollo y las verduras en una bandeja de horno. Aliña con aceite, hierbas, sal y pimienta. Hornea durante 40-45 minutos hasta que el pollo esté dorado y las verduras tiernas. Añade las aceitunas los últimos 5 minutos. Sirve caliente."
 }
+
 

@@ -1,6 +1,7 @@
 {
   "id": "gazpacho",
   "titulo": "Gazpacho Andaluz",
+  "categoria": "ensalada/verdura",
   "foto": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400",
   "ingredientes": [
     "1kg de tomates maduros",
@@ -16,4 +17,5 @@
   ],
   "preparacion": "Lava y trocea todas las verduras. Tritura todo en batidora hasta que quede suave. Pasa por un colador fino. Añade aceite, vinagre y sal. Refrigera al menos 2 horas. Sirve muy frío con dados de pepino, tomate y picatostes como guarnición."
 }
+
 

@@ -185,8 +185,15 @@ function openRecipeModal(dateKey) {
         section.classList.add('collapsed');
     });
     
+    // Colapsar categorías por defecto (solo en comida)
+    const categorySections = document.querySelectorAll('.category-section');
+    categorySections.forEach(section => {
+        section.classList.add('collapsed');
+    });
+    
     // Agregar event listeners para toggle
     setupMealSectionToggles();
+    setupCategoryToggles();
     
     modal.style.display = 'block';
 }
@@ -206,61 +213,99 @@ function setupMealSectionToggles() {
     });
 }
 
+// Configurar toggles para las categorías dentro de comida
+function setupCategoryToggles() {
+    const categorySections = document.querySelectorAll('.category-section');
+    categorySections.forEach(section => {
+        const h4 = section.querySelector('.category-header');
+        if (h4 && !h4.dataset.toggleSetup) {
+            h4.dataset.toggleSetup = 'true';
+            h4.addEventListener('click', (e) => {
+                e.stopPropagation();
+                section.classList.toggle('collapsed');
+            });
+        }
+    });
+}
+
 // Renderizar lista de recetas para selección
 function renderRecipeSelection(mealType, containerId) {
     const container = document.getElementById(containerId);
-    container.innerHTML = '';
-    
     const currentSelection = mealPlan[selectedDate]?.[mealType];
     
-    recipes.forEach(recipe => {
-        const card = document.createElement('div');
-        card.className = `recipe-card ${currentSelection?.id === recipe.id ? 'selected' : ''}`;
-        card.dataset.recipeId = recipe.id;
-        
-        card.innerHTML = `
-            <img src="${recipe.foto}" alt="${recipe.titulo}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23333%22 width=%22100%22 height=%22100%22/%3E%3Ctext fill=%22%23999%22 x=%2250%22 y=%2250%22 text-anchor=%22middle%22 dy=%22.3em%22%3ENo imagen%3C/text%3E%3C/svg%3E'">
-            <div class="recipe-card-info">
-                <div class="recipe-card-title">${recipe.titulo}</div>
-                <div class="recipe-card-ingredients">${recipe.ingredientes.slice(0, 3).join(', ')}...</div>
-            </div>
-            <button class="recipe-detail-btn" aria-label="Ver detalles">
-                <img src="assets/icono-ojo.svg" alt="Ver detalles" class="eye-icon">
-            </button>
-        `;
-        
-        const detailBtn = card.querySelector('.recipe-detail-btn');
-        detailBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            showRecipeDetail(recipe);
-        });
-        
-        card.addEventListener('click', () => {
-            // Toggle selección
-            if (currentSelection?.id === recipe.id) {
-                // Deseleccionar
-                if (mealPlan[selectedDate]) {
-                    delete mealPlan[selectedDate][mealType];
-                    if (Object.keys(mealPlan[selectedDate]).length === 0) {
-                        delete mealPlan[selectedDate];
-                    }
-                }
-            } else {
-                // Seleccionar
-                if (!mealPlan[selectedDate]) {
-                    mealPlan[selectedDate] = {};
-                }
-                mealPlan[selectedDate][mealType] = recipe;
-            }
+    // Si es comida, renderizar por categorías
+    if (mealType === 'lunch') {
+        const categories = ['ensalada/verdura', 'proteina', 'hidratos'];
+        categories.forEach(category => {
+            const categoryContainer = container.querySelector(`.category-recipes-list[data-category="${category}"]`);
+            if (!categoryContainer) return;
             
-            saveMealPlan();
-            renderRecipeSelection('lunch', 'lunchRecipes');
-            renderRecipeSelection('dinner', 'dinnerRecipes');
-            renderCalendar();
+            categoryContainer.innerHTML = '';
+            
+            const categoryRecipes = recipes.filter(r => r.categoria === category);
+            categoryRecipes.forEach(recipe => {
+                const card = createRecipeCard(recipe, currentSelection, mealType);
+                categoryContainer.appendChild(card);
+            });
         });
-        
-        container.appendChild(card);
+    } else {
+        // Para cena, renderizar normalmente
+        container.innerHTML = '';
+        recipes.forEach(recipe => {
+            const card = createRecipeCard(recipe, currentSelection, mealType);
+            container.appendChild(card);
+        });
+    }
+}
+
+// Crear tarjeta de receta
+function createRecipeCard(recipe, currentSelection, mealType) {
+    const card = document.createElement('div');
+    card.className = `recipe-card ${currentSelection?.id === recipe.id ? 'selected' : ''}`;
+    card.dataset.recipeId = recipe.id;
+    
+    card.innerHTML = `
+        <img src="${recipe.foto}" alt="${recipe.titulo}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23333%22 width=%22100%22 height=%22100%22/%3E%3Ctext fill=%22%23999%22 x=%2250%22 y=%2250%22 text-anchor=%22middle%22 dy=%22.3em%22%3ENo imagen%3C/text%3E%3C/svg%3E'">
+        <div class="recipe-card-info">
+            <div class="recipe-card-title">${recipe.titulo}</div>
+            <div class="recipe-card-ingredients">${recipe.ingredientes.slice(0, 3).join(', ')}...</div>
+        </div>
+        <button class="recipe-detail-btn" aria-label="Ver detalles">
+            <img src="assets/icono-ojo.svg" alt="Ver detalles" class="eye-icon">
+        </button>
+    `;
+    
+    const detailBtn = card.querySelector('.recipe-detail-btn');
+    detailBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showRecipeDetail(recipe);
     });
+    
+    card.addEventListener('click', () => {
+        // Toggle selección
+        if (currentSelection?.id === recipe.id) {
+            // Deseleccionar
+            if (mealPlan[selectedDate]) {
+                delete mealPlan[selectedDate][mealType];
+                if (Object.keys(mealPlan[selectedDate]).length === 0) {
+                    delete mealPlan[selectedDate];
+                }
+            }
+        } else {
+            // Seleccionar
+            if (!mealPlan[selectedDate]) {
+                mealPlan[selectedDate] = {};
+            }
+            mealPlan[selectedDate][mealType] = recipe;
+        }
+        
+        saveMealPlan();
+        renderRecipeSelection('lunch', 'lunchRecipes');
+        renderRecipeSelection('dinner', 'dinnerRecipes');
+        renderCalendar();
+    });
+    
+    return card;
 }
 
 // Mostrar detalles de receta

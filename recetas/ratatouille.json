@@ -1,6 +1,7 @@
 {
   "id": "ratatouille",
   "titulo": "Ratatouille",
+  "categoria": "ensalada/verdura",
   "foto": "https://images.unsplash.com/photo-1572441713132-51c75654db73?w=400",
   "ingredientes": [
     "2 berenjenas",
@@ -16,4 +17,5 @@
   ],
   "preparacion": "Corta todas las verduras en rodajas de 1cm. Sofríe por separado cada verdura hasta que esté tierna. En una cazuela grande, rehoga la cebolla y ajo. Añade los tomates pelados y troceados. Agrega todas las verduras, hierbas, sal y pimienta. Cocina a fuego lento 30 minutos hasta que esté meloso. Sirve templado o frío con albahaca fresca."
 }
+
 

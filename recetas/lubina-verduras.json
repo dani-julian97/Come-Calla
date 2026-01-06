@@ -1,6 +1,7 @@
 {
   "id": "lubina-verduras",
   "titulo": "Lubina con Verduras",
+  "categoria": "proteina",
   "foto": "https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=400",
   "ingredientes": [
     "4 filetes de lubina",
@@ -15,4 +16,5 @@
   ],
   "preparacion": "Corta las verduras en trozos. Sofríelas en una sartén grande hasta que estén tiernas. Salpimenta los filetes de lubina. Colócalos sobre las verduras. Cocina a fuego medio 4-5 minutos por cada lado. Añade tomates cherry cortados por la mitad. Sirve con limón y eneldo fresco."
 }
+
 

@@ -1,6 +1,7 @@
 {
   "id": "ensalada-cesar",
   "titulo": "Ensalada César",
+  "categoria": "ensalada/verdura",
   "foto": "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=800&h=600&fit=crop",
   "ingredientes": [
     "1 lechuga romana",

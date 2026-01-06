@@ -1,6 +1,7 @@
 {
   "id": "risotto-setas-espinacas",
   "titulo": "Risotto de Setas y Espinacas",
+  "categoria": "hidratos",
   "foto": "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=400",
   "ingredientes": [
     "300g de arroz arborio",
@@ -17,4 +18,5 @@
   ],
   "preparacion": "Sofríe las setas y resérvalas. En la misma sartén, sofríe la cebolla y ajo. Añade el arroz y rehoga. Vierte el vino y deja evaporar. Añade caldo caliente cucharada a cucharada removiendo constantemente. Cuando falten 5 minutos, añade las espinacas y setas. Finaliza con mantequilla y parmesano. Sirve inmediatamente."
 }
+
 
