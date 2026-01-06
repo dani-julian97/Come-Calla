@@ -61,7 +61,7 @@ header h1 {
 }
 
 .logo {
-    height: 55px;
+    height: 70px;
     width: auto;
     max-width: 100%;
 }
@@ -494,11 +494,22 @@ header h1 {
 .meal-selection {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 30px;
+    position: relative;
+    padding: 0;
+}
+
+.meal-section {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+    padding: 0;
 }
 
 .meal-section h3 {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-size: 1.2rem;
     color: var(--text-primary);
     cursor: pointer;
@@ -507,12 +518,13 @@ header h1 {
     align-items: center;
     gap: 10px;
     justify-content: space-between;
-    padding: 10px;
+    padding: 15px 18px;
     background: var(--bg-tertiary);
-    border-radius: 8px;
+    border-radius: 10px;
     border: 2px solid var(--border);
     transition: all 0.2s ease;
     margin-top: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .meal-icon {
@@ -556,49 +568,97 @@ header h1 {
     padding-bottom: 0;
 }
 
+.meal-section.collapsed .category-section {
+    display: none !important;
+}
+
 .recipes-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    max-height: 300px;
-    overflow-y: auto;
+    gap: 20px;
+    max-height: none;
+    overflow-y: visible;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    padding-right: 5px;
+    padding: 20px 0;
     transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+    min-height: 0;
+}
+
+/* Para las secciones de comida y cena, permitir scroll si es necesario */
+#lunchRecipes {
+    max-height: 75vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 10px;
+    margin-right: -5px;
+}
+
+#dinnerRecipes {
+    max-height: 75vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 10px;
+    margin-right: -5px;
 }
 
 /* Scrollbar personalizado para las listas de recetas */
 .recipes-list::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 
 .recipes-list::-webkit-scrollbar-track {
     background: var(--bg-secondary);
     border-radius: 10px;
+    margin: 5px 0;
 }
 
 .recipes-list::-webkit-scrollbar-thumb {
     background: var(--accent);
     border-radius: 10px;
+    border: 2px solid var(--bg-secondary);
 }
 
 .recipes-list::-webkit-scrollbar-thumb:hover {
     background: var(--accent-hover);
 }
 
+/* Scrollbar para categorías */
+.category-recipes-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.category-recipes-list::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+.category-recipes-list::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+    border: 2px solid var(--bg-tertiary);
+}
+
+.category-recipes-list::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-hover);
+}
+
 /* Categorías dentro de comida */
 .category-section {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     background: var(--bg-secondary);
-    border-radius: 8px;
+    border-radius: 12px;
     border: 2px solid var(--border);
     overflow: hidden;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .category-header {
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: var(--text-primary);
     cursor: pointer;
@@ -606,7 +666,7 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 15px;
+    padding: 20px 25px;
     background: var(--bg-tertiary);
     border-bottom: 2px solid var(--border);
     transition: all 0.2s ease;
@@ -637,12 +697,12 @@ header h1 {
 .category-recipes-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    max-height: 400px;
+    gap: 20px;
+    max-height: 650px;
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    padding: 15px;
+    padding: 30px 25px;
     transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
 }
 
@@ -651,22 +711,22 @@ header h1 {
     overflow: hidden;
     opacity: 0;
     margin: 0;
-    padding: 0 15px;
+    padding: 0 25px;
 }
 
 .recipe-card {
     background: var(--bg-tertiary);
     border: 2px solid var(--border);
-    border-radius: 10px;
-    padding: 12px;
+    border-radius: 12px;
+    padding: 16px;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
-    min-height: 80px;
+    min-height: 90px;
 }
 
 .recipe-card:active {
@@ -723,9 +783,9 @@ header h1 {
     border: 2px solid var(--border);
     color: var(--text-primary);
     font-size: 1.2rem;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
@@ -738,8 +798,8 @@ header h1 {
 }
 
 .eye-icon {
-    width: 16px;
-    height: 16px;
+    width: 10px;
+    height: 10px;
     filter: brightness(0) invert(1);
 }
 
@@ -846,7 +906,7 @@ header h1 {
     }
     
     .logo {
-        height: 65px;
+        height: 80px;
     }
     
     .calendar-container {
@@ -909,11 +969,42 @@ header h1 {
     
     .meal-selection {
         flex-direction: row;
-        gap: 20px;
+        gap: 30px;
     }
     
     .recipes-list {
-        max-height: 400px;
+        max-height: none;
+        padding: 25px 0;
+        gap: 25px;
+    }
+    
+    #lunchRecipes {
+        max-height: 80vh;
+    }
+    
+    #dinnerRecipes {
+        max-height: 80vh;
+    }
+    
+    .meal-section h3 {
+        padding: 18px 22px;
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+    }
+    
+    .category-section {
+        margin-bottom: 30px;
+    }
+    
+    .category-header {
+        padding: 22px 30px;
+        font-size: 1.25rem;
+    }
+    
+    .category-recipes-list {
+        max-height: 750px;
+        padding: 35px 30px;
+        gap: 22px;
     }
     
     .recipe-card img {
@@ -931,6 +1022,21 @@ header h1 {
     
     .recipe-detail-title {
         font-size: 1.8rem;
+    }
+    
+    .category-recipes-list {
+        max-height: 700px;
+        padding: 30px 25px;
+        gap: 20px;
+    }
+    
+    .category-header {
+        padding: 20px 25px;
+        font-size: 1.2rem;
+    }
+    
+    .category-section {
+        margin-bottom: 25px;
     }
     
     .shopping-list-container {
@@ -961,7 +1067,7 @@ header h1 {
     }
     
     .logo {
-        height: 75px;
+        height: 90px;
     }
     
     .month-navigation {
@@ -1021,30 +1127,72 @@ header h1 {
     
     .meal-selection {
         grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        gap: 40px;
     }
     
     .recipes-list {
-        max-height: 500px;
+        max-height: none;
+        padding: 30px 0;
+        gap: 30px;
+    }
+    
+    #lunchRecipes {
+        max-height: 85vh;
+    }
+    
+    #dinnerRecipes {
+        max-height: 85vh;
     }
     
     .meal-section h3 {
         font-size: 1.5rem;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+        padding: 20px 25px;
+    }
+    
+    .category-section {
+        margin-bottom: 35px;
+    }
+    
+    .category-header {
+        padding: 25px 35px;
+        font-size: 1.35rem;
+    }
+    
+    .category-recipes-list {
+        max-height: 850px;
+        padding: 40px 35px;
+        gap: 25px;
     }
     
     .recipe-card {
-        padding: 15px;
-        gap: 15px;
+        padding: 18px;
+        gap: 18px;
+        min-height: 100px;
     }
     
     .recipe-card img {
-        width: 80px;
-        height: 80px;
+        width: 90px;
+        height: 90px;
     }
     
     .recipe-card-title {
         font-size: 1.1rem;
+    }
+    
+    .category-recipes-list {
+        max-height: 800px;
+        padding: 35px 30px;
+        gap: 22px;
+    }
+    
+    .category-header {
+        padding: 22px 30px;
+        font-size: 1.3rem;
+    }
+    
+    .category-section {
+        margin-bottom: 30px;
     }
     
     .recipe-detail-header img {

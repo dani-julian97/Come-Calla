@@ -185,7 +185,7 @@ function openRecipeModal(dateKey) {
         section.classList.add('collapsed');
     });
     
-    // Colapsar categorías por defecto (solo en comida)
+    // Colapsar categorías por defecto (en comida y cena)
     const categorySections = document.querySelectorAll('.category-section');
     categorySections.forEach(section => {
         section.classList.add('collapsed');
@@ -233,29 +233,20 @@ function renderRecipeSelection(mealType, containerId) {
     const container = document.getElementById(containerId);
     const currentSelection = mealPlan[selectedDate]?.[mealType];
     
-    // Si es comida, renderizar por categorías
-    if (mealType === 'lunch') {
-        const categories = ['ensalada/verdura', 'proteina', 'hidratos'];
-        categories.forEach(category => {
-            const categoryContainer = container.querySelector(`.category-recipes-list[data-category="${category}"]`);
-            if (!categoryContainer) return;
-            
-            categoryContainer.innerHTML = '';
-            
-            const categoryRecipes = recipes.filter(r => r.categoria === category);
-            categoryRecipes.forEach(recipe => {
-                const card = createRecipeCard(recipe, currentSelection, mealType);
-                categoryContainer.appendChild(card);
-            });
-        });
-    } else {
-        // Para cena, renderizar normalmente
-        container.innerHTML = '';
-        recipes.forEach(recipe => {
+    // Renderizar por categorías para comida y cena
+    const categories = ['ensalada/verdura', 'proteina', 'hidratos'];
+    categories.forEach(category => {
+        const categoryContainer = container.querySelector(`.category-recipes-list[data-category="${category}"]`);
+        if (!categoryContainer) return;
+        
+        categoryContainer.innerHTML = '';
+        
+        const categoryRecipes = recipes.filter(r => r.categoria === category);
+        categoryRecipes.forEach(recipe => {
             const card = createRecipeCard(recipe, currentSelection, mealType);
-            container.appendChild(card);
+            categoryContainer.appendChild(card);
         });
-    }
+    });
 }
 
 // Crear tarjeta de receta
