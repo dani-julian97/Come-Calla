@@ -789,8 +789,8 @@ header h1 {
     border: 2px solid var(--border);
     color: var(--text-primary);
     font-size: 1.2rem;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -804,8 +804,8 @@ header h1 {
 }
 
 .eye-icon {
-    width: 10px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
     filter: brightness(0) invert(1);
     object-fit: contain;
 }
