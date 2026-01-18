@@ -789,9 +789,9 @@ header h1 {
     border: 2px solid var(--border);
     color: var(--text-primary);
     font-size: 1.2rem;
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
@@ -804,9 +804,10 @@ header h1 {
 }
 
 .eye-icon {
-    width: 7px;
-    height: 7px;
+    width: 10px;
+    height: 10px;
     filter: brightness(0) invert(1);
+    object-fit: contain;
 }
 
 .recipe-detail-btn:hover .eye-icon,
