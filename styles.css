@@ -784,47 +784,6 @@ header h1 {
     overflow: hidden;
 }
 
-.recipe-detail-btn {
-    background: var(--bg-secondary);
-    border: 2px solid var(--border);
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    padding: 0;
-}
-
-.eye-icon {
-    width: 6px;
-    height: 6px;
-    filter: brightness(0) invert(1);
-    object-fit: contain;
-}
-
-.recipe-detail-btn:hover .eye-icon,
-.recipe-detail-btn:active .eye-icon {
-    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(200deg);
-}
-
-.recipe-detail-btn:active {
-    background: var(--accent);
-    border-color: var(--accent);
-    transform: scale(0.9);
-}
-
-.recipe-detail-btn:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-}
 
 /* Recipe Detail Modal */
 .recipe-detail {

@@ -261,39 +261,55 @@ function createRecipeCard(recipe, currentSelection, mealType) {
             <div class="recipe-card-title">${recipe.titulo}</div>
             <div class="recipe-card-ingredients">${recipe.ingredientes.slice(0, 3).join(', ')}...</div>
         </div>
-        <button class="recipe-detail-btn" aria-label="Ver detalles">
-            <img src="assets/icono-ojo.svg" alt="Ver detalles" class="eye-icon">
-        </button>
     `;
     
-    const detailBtn = card.querySelector('.recipe-detail-btn');
-    detailBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        showRecipeDetail(recipe);
+    // Manejar click simple (seleccionar) y doble click (ver descripción)
+    let clickTimer = null;
+    let clickCount = 0;
+    
+    card.addEventListener('click', (e) => {
+        clickCount++;
+        
+        if (clickCount === 1) {
+            clickTimer = setTimeout(() => {
+                // Click simple - seleccionar receta
+                if (currentSelection?.id === recipe.id) {
+                    // Deseleccionar
+                    if (mealPlan[selectedDate]) {
+                        delete mealPlan[selectedDate][mealType];
+                        if (Object.keys(mealPlan[selectedDate]).length === 0) {
+                            delete mealPlan[selectedDate];
+                        }
+                    }
+                } else {
+                    // Seleccionar
+                    if (!mealPlan[selectedDate]) {
+                        mealPlan[selectedDate] = {};
+                    }
+                    mealPlan[selectedDate][mealType] = recipe;
+                }
+                
+                saveMealPlan();
+                renderRecipeSelection('lunch', 'lunchRecipes');
+                renderRecipeSelection('dinner', 'dinnerRecipes');
+                renderCalendar();
+                
+                clickCount = 0;
+            }, 300); // Esperar 300ms para detectar si es doble click
+        } else if (clickCount === 2) {
+            // Doble click - mostrar descripción
+            clearTimeout(clickTimer);
+            showRecipeDetail(recipe);
+            clickCount = 0;
+        }
     });
     
-    card.addEventListener('click', () => {
-        // Toggle selección
-        if (currentSelection?.id === recipe.id) {
-            // Deseleccionar
-            if (mealPlan[selectedDate]) {
-                delete mealPlan[selectedDate][mealType];
-                if (Object.keys(mealPlan[selectedDate]).length === 0) {
-                    delete mealPlan[selectedDate];
-                }
-            }
-        } else {
-            // Seleccionar
-            if (!mealPlan[selectedDate]) {
-                mealPlan[selectedDate] = {};
-            }
-            mealPlan[selectedDate][mealType] = recipe;
-        }
-        
-        saveMealPlan();
-        renderRecipeSelection('lunch', 'lunchRecipes');
-        renderRecipeSelection('dinner', 'dinnerRecipes');
-        renderCalendar();
+    // También manejar dblclick nativo para mejor compatibilidad
+    card.addEventListener('dblclick', (e) => {
+        e.preventDefault();
+        clearTimeout(clickTimer);
+        clickCount = 0;
+        showRecipeDetail(recipe);
     });
     
     return card;
